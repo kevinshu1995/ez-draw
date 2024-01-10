@@ -1,9 +1,10 @@
 import { reactive, computed, watch } from "vue";
-import type { FnToggleAlert, FnOpenAlert, FnCloseAlert } from "./type";
+import type { AlertStates, FnToggleAlert, FnOpenAlert, FnCloseAlert } from "./type";
 
 export default function useAlert() {
-    const states = reactive({
+    const states = reactive<AlertStates>({
         display: false,
+        title: "",
         message: "",
         clickOutsideToClose: false,
         closeBtnText: "關閉",
@@ -15,6 +16,7 @@ export default function useAlert() {
         () => states.display,
         val => {
             if (val === false) {
+                states.title = "";
                 states.message = "";
             }
         }
@@ -28,7 +30,8 @@ export default function useAlert() {
         states.display = !states.display;
     };
 
-    const openAlert: FnOpenAlert = ({ message, clickOutsideToClose, closeBtnText }) => {
+    const openAlert: FnOpenAlert = ({ title, message, clickOutsideToClose, closeBtnText }) => {
+        states.title = title ?? "";
         states.message = message;
         states.clickOutsideToClose = clickOutsideToClose || false;
         states.closeBtnText = closeBtnText || "關閉";

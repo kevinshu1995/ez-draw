@@ -1,9 +1,10 @@
 <template>
     <dialog :class="['modal', props.states.display && 'modal-open']">
         <div class="modal-box">
-            <p class="pt-8 pb-4 text-center">{{ props.states.message }}</p>
+            <h3 class="font-bold text-lg" v-html="props.states.title" v-show="props.states.title"></h3>
+            <p class="pt-8 pb-4 text-center" v-html="props.states.message"></p>
             <div class="modal-action">
-                <button class="btn" @click="props.toggleAlert(false)">{{ props.states.closeBtnText }}</button>
+                <button class="btn btn-primary" @click="props.toggleAlert(false)">{{ props.states.closeBtnText }}</button>
             </div>
         </div>
         <div v-show="props.states.clickOutsideToClose" class="modal-backdrop" @click="props.toggleAlert(false)"></div>
