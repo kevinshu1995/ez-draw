@@ -1,18 +1,31 @@
-# Vue 3 + TypeScript + Vite
+# ez-draw
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## TODO
 
-## Recommended IDE Setup
+### core
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+-   [ ] Navigation
+-   [ ] i18n
+-   [x] vue-router transition
+-   [ ] sponsor
 
-## Type Support For `.vue` Imports in TS
+### Others
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+-   [ ] Logo
+    -   favicon、Logo
+-   [ ] package.json
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### features
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+-   [ ] Instagram drawing
+-   [ ] Facebook drawing
+
+### API
+
+-   [ ] [POST https://api.instagram.com/oauth/access_token](https://developers.facebook.com/docs/instagram-basic-display-api/reference/oauth-access-token)
+    -   此端點允許您將授權碼換成短期 Instagram 用戶存取權杖。
+-   [ ] [GET https://graph.instagram.com/access_token](https://developers.facebook.com/docs/instagram-basic-display-api/reference/access_token)
+    -   將短期 Instagram 用戶存取權杖換成長期 Instagram 用戶存取權杖。
+-   [ ] [GET https://graph.instagram.com/refresh_access_token](https://developers.facebook.com/docs/instagram-basic-display-api/reference/refresh_access_token)
+    -   此端點允許您重新整理長期 Instagram 用戶存取權杖。
+
