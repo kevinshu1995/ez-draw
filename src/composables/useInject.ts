@@ -1,7 +1,7 @@
 import { inject } from "vue";
 import type { InjectionKey } from "vue";
 
-import { ToastSymbol, AlertSymbol, LoadingSymbol } from "src/symbols";
+import { ToastSymbol, AlertSymbol, LoadingSymbol } from "src/plugins/symbols";
 
 function injectStrict<T>(key: InjectionKey<T>, fallback?: T) {
     const resolved = inject(key, fallback);

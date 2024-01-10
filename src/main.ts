@@ -8,9 +8,10 @@ import "virtual:uno.css";
 import "@unocss/reset/tailwind.css";
 
 import SvgIcon from "./components/global/SvgIcon.vue";
-import PluginToast from "./components/plugins/toast";
-import PluginAlert from "./components/plugins/alert";
-import PluginLoading from "./components/plugins/loading";
+
+import PluginToast from "./plugins/toast";
+import PluginAlert from "./plugins/alert";
+import PluginLoading from "./plugins/loading";
 
 const pinia = createPinia();
 
