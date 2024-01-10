@@ -6,7 +6,12 @@ import transformerDirectives from "@unocss/transformer-directives";
 import { presetDaisy } from "unocss-preset-daisy";
 
 export default defineConfig({
-    presets: [presetUno(), presetDaisy()],
+    presets: [
+        presetUno(),
+        presetDaisy({
+            themes: ["forest"],
+        }),
+    ],
     transformers: [transformerDirectives()],
 });
 
