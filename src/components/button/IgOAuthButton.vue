@@ -4,6 +4,8 @@ const userStore = useUser();
 </script>
 
 <template>
-    <button @click="userStore.goGetIgOAuth">ig oauth</button>
+    <button @click="userStore.goGetIgOAuth" class="btn btn-primary">
+        <slot />
+    </button>
 </template>
 
