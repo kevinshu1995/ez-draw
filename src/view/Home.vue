@@ -24,10 +24,10 @@ function addLoading() {
 </script>
 
 <template>
-    <div class="container mx-auto px-4">
-        <RouterLink :to="{ path: 'Instagram' }" class="link">Instagram</RouterLink>
+    <div class="">
+        <RouterLink :to="{ path: 'Instagram' }" class="link"> Instagram </RouterLink>
 
-        <div class="flex gap-4">
+        <div class="flex gap-4 pb-600">
             <button class="btn" @click="addToast">toast</button>
             <button class="btn" @click="addAlert">alert</button>
             <button class="btn" @click="addLoading">loading</button>
