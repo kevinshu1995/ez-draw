@@ -19,7 +19,7 @@ interface ParamsFetchIgMedia {
 
 export const useIgMedia = ({ limit = null }: { limit?: null | number }) => {
     const storeUser = useUser();
-    const igToken = computed(() => storeUser.token.ig);
+    const igToken = computed(() => storeUser.igToken);
     const igId = computed(() => storeUser.igInfo.id);
 
     const apiDataMedia = ref<GetUserMediaData | null>(null);
@@ -96,6 +96,6 @@ export const useIgMedia = ({ limit = null }: { limit?: null | number }) => {
         return privateFetchIgMedia({ after: mediaPaging.after });
     }
 
-    return { mediaList, mediaPaging, hasNext, hasPrev, isFetching, fetchIgMedia, fetchMediaNext };
+    return { mediaList, mediaPaging, hasNext, hasPrev, isFetching, hasFetchedBefore, fetchIgMedia, fetchMediaNext };
 };
 

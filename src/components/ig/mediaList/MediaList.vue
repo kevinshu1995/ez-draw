@@ -4,7 +4,7 @@ import { useIgMedia } from "./useIgMedia";
 import type { MediaData } from "src/api/ig";
 import { useInfiniteScroll } from "@vueuse/core";
 
-const { mediaList, isFetching, hasNext, fetchIgMedia, fetchMediaNext } = useIgMedia({ limit: 30 });
+const { mediaList, isFetching, hasNext, hasFetchedBefore, fetchIgMedia, fetchMediaNext } = useIgMedia({ limit: 30 });
 
 const elInfiniteScroll = ref(null);
 
@@ -47,7 +47,7 @@ onMounted(async () => {
 <template>
     <div>
         <div class="flex justify-center">
-            <ul class="grid grid-cols-3 gap-1 h-[50vh] overflow-auto" ref="elInfiniteScroll">
+            <ul class="grid grid-cols-3 gap-1 h-[75vh] overflow-auto overscroll-none" ref="elInfiniteScroll">
                 <li v-for="media in mediaList" :key="media.id">
                     <div class="flex">
                         <img class="aspect-square object-cover w-full" :src="img(media).src" />
@@ -58,7 +58,7 @@ onMounted(async () => {
                     <SvgIcon name="loader" class="animate-spin w-7 h-7" />
                 </li>
 
-                <li class="col-span-3 py-8 flex flex-col items-center justify-center gap-4" v-show="mediaList.length === 0">
+                <li class="col-span-3 py-8 flex flex-col items-center justify-center gap-4" v-show="mediaList.length === 0 && hasFetchedBefore">
                     <span>這個帳號沒有任何貼文</span>
                     <SvgIcon name="mood-empty" class="w-7 h-7" />
                 </li>
